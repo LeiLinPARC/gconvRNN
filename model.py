@@ -170,6 +170,7 @@ class gconvLSTMCell(RNNCell):
                     Woxt = tf.get_variable("Woxt", [K*feat_in, feat_out], dtype=tf.float32,
                                            initializer=tf.random_uniform_initializer(minval=-0.1, maxval=0.1))
                     # ht is the lower level, output
+                    # K cheby coefficients for each feature in the feature dimension
                     Wzht = tf.get_variable("Wzht", [K*feat_out, feat_out], dtype=tf.float32,
                                            initializer=tf.random_uniform_initializer(minval=-0.1, maxval=0.1))
                     Wiht = tf.get_variable("Wiht", [K*feat_out, feat_out], dtype=tf.float32,
