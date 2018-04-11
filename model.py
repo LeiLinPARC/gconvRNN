@@ -141,7 +141,9 @@ class gconvLSTMCell(RNNCell):
             scope = tf.get_variable_scope()
             with tf.variable_scope(scope) as scope:
                 try:
-                    #Need four diff Wconv weight + for Hidden weight
+                    #Need four diff Wconv weight + four Hidden weight
+                    #__xt is related with xt in Colah's blog
+                    #__ht is related with h(t-1) in Colah's blog
                     Wzxt = tf.get_variable("Wzxt", [K*feat_in, feat_out], dtype=tf.float32,
                                            initializer=tf.random_uniform_initializer(minval=-0.1, maxval=0.1))
                     Wixt = tf.get_variable("Wixt", [K*feat_in, feat_out], dtype=tf.float32,
