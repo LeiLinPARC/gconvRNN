@@ -107,7 +107,7 @@ class Trainer(object):
                                                    self.config.num_node,
                                                    self.config.num_time_steps])
                     batch_x = reshaped
-                elif self.config.model_type == 'glstm':
+                elif self.config.model_type == 'glstm': #这里准备数据
                     reshaped = batch_x_onehot.reshape([self.config.batch_size, 
                                                    self.config.num_time_steps,
                                                    1,self.config.num_node])
