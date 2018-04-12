@@ -24,7 +24,7 @@ else:
     from tensorflow.python.ops.rnn_cell_impl import RNNCell
     tfversion = "new"
 
-def cheby_conv(x, L, lmax, feat_out, K, W):
+def cheby_conv(x, L, lmax, feat_out, K, W): # 卷积完了之后再输入到LSTM里
     '''
     x : [batch_size, N_node, feat_in] - input of each time step
     nSample : number of samples = batch_size
