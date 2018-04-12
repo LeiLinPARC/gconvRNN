@@ -110,7 +110,7 @@ class Trainer(object):
                 elif self.config.model_type == 'glstm': #这里准备数据
                     reshaped = batch_x_onehot.reshape([self.config.batch_size, 
                                                    self.config.num_time_steps,
-                                                   1,self.config.num_node])
+                                                   1,self.config.num_node]) # 1 是特征数目？
                     batch_x = np.transpose(reshaped,(0, 3, 2, 1))
                 
 
